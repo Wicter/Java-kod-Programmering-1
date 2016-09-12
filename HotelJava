@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Hotel
+{
+	public static void main(String[] args) {
+	  Scanner sc = new Scanner(System.in);
+		System.out.println("Valkommen! Hur lange tanker du stanna?");
+		int days = sc.nextInt();
+		int pris = 800;
+		int summa = 0;
+		int k = 0;
+		
+		 if (days > 10)
+		  System.out.println("Tyvarr sa kan du max stanna i 10 dagar!");
+		
+		 if (days <= 0)
+		  System.out.println("Oj! Nu blev det fel!");
+		
+		 else {
+	
+		  while (k < days) {
+			  k = k + 1;
+		    summa = summa + pris;
+		 }
+		System.out.println("Det blir " + summa + "kr!");
+
+	  }
+	}
+}
