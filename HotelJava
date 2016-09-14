@@ -10,7 +10,8 @@ public class Hotel
 		 om man rakat skrivit fel. */
 		
 	 while (true) {	
-    Scanner sc = new Scanner(System.in);
+	 
+             Scanner sc = new Scanner(System.in);
 		 
 		 System.out.println("=================================================");
 		 // Den har koden ar endast for att enkelt avskilja texten i konsolen.
@@ -22,28 +23,28 @@ public class Hotel
 		 int k = 0;
 		
 		  if (days > 10) {
-			 System.out.println("=================================================");
-		   System.out.println("Tyvarr sa kan du max stanna i 10 dagar!");
-			 System.out.println("Vi forsoker igen...");
-		   continue;
-			}
-		  if (days <= 0) {
-			 System.out.println("=================================================");
-		   System.out.println("Oj! Nu blev det fel!");
-			 System.out.println("Vi forsoker igen...");
-		   continue;
-			}
+		      System.out.println("=================================================");
+		      System.out.println("Tyvarr sa kan du max stanna i 10 dagar!");
+	              System.out.println("Vi forsoker igen...");
+		      continue;
+	 }
+		  else (days <= 0) {
+		      System.out.println("=================================================");
+		      System.out.println("Oj! Nu blev det fel!");
+		      System.out.println("Vi forsoker igen...");
+		      continue;
+	 }
 		  else {
 	
 		    while (k < days) {
-			    k = k + 1;
+		      k = k + 1;
 		      summa = summa + pris;
-		 }
+	 }
 			System.out.println("=================================================");
-		  System.out.println("Det blir " + summa + "kr!");
+		        System.out.println("Det blir " + summa + "kr!");
 			System.out.println("Tack for ditt kop!");
 			break;
-			}
-	  }
-	}
+   }
+  }
+ }
 }
