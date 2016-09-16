@@ -19,23 +19,23 @@ public class Struktur
 	 while (k <= n) {
 	  summa += k;
 	  k += 1;
-	 }
+   }
 		
 	 if (n + o >= 1 && n + o <= 10) {
 	  System.out.println("Summa = " + summa);
-		 break;
+           break;
    }	
 		
    else {
     System.out.println("Fel, heltalet ej mellan 1 - 10");
-		 continue;
-	 }
-	}
+     continue;
+   }
+   }
 	 
-	 catch (InputMismatchException e) {
-    System.out.println("Fel, du far endast skriva siffror!");
-	  continue;
-	 }
-	}
+    catch (InputMismatchException e) {
+     System.out.println("Fel, du far endast skriva siffror!");
+     continue;
+   }
+  }
  }		
 }
