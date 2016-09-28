@@ -1,0 +1,95 @@
+import java.util.*;
+
+public class uppgiftb2
+{
+ public static void main(String[] args) {
+ 
+ Scanner sc = new Scanner(System.in);
+ String o = sc.nextLine();
+ int p = sc.nextInt();
+ int A1 = 0;
+ int A2 = 0;
+ int G1 = 0;
+ int G2 = 0;
+ int M1 = G1/A1;
+ int M2 = G2/A2;
+   
+ while (true){
+   
+   try {
+   
+   System.out.println("Man eller kvinna?");
+     
+     if (o == "man" , "Man") {
+       A1 += 1;
+         
+       while(true) {
+       
+       System.out.println("-----------------------------------------");
+       System.out.println("Skriv in din alder");
+       
+        if (p <= 0) {
+         
+          System.out.println("-----------------------------------------");
+          System.out.println("Fel, forsok igen");
+          continue; 
+        }
+         
+        else {
+          G1 += p;
+            break;
+    }
+  }
+ }
+
+     else if (o == "Kvinna" , "kvinna") {
+       A2 += 1;
+       
+       while(true) {
+       
+       System.out.println("-----------------------------------------");
+       System.out.println("Skriv in din alder");
+       
+        if (p <= 0) {
+         
+          System.out.println("-----------------------------------------");
+          System.out.println("Fel, forsok igen");
+          continue; 
+        }
+         
+        else {
+          G2 += p;
+            break;
+    }
+   }
+  }
+ }
+    catch (MismatchInputException e) {
+     System.out.println("-----------------------------------------");
+     System.out.println("Nu blev nagot fel, vi borjar om...");
+       A1 -= A1;
+       A2 -= A2;
+       continue;
+    }
+   
+   System.out.println("-----------------------------------------");
+   System.out.println("Vill du fortsatta?");
+     
+     if (o == "ja" , "Ja") {
+       continue;
+     }
+     else if (o == "Nej" , "nej") {
+       break;
+     }
+    }
+   System.out.println("-----------------------------------------");
+   System.out.println("Medelalder man:");
+   System.out.println(M1);
+   System.out.println("-----------------------------------------");
+   System.out.println("Medelalder kvinna:");
+   System.out.println(M2);
+   System.out.println("-----------------------------------------");
+   System.out.println("Programmet avslutas...");
+ }
+}
+   
