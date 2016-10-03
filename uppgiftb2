@@ -1,11 +1,19 @@
 import java.util.*;
+import java.io.*;
 
 public class uppgiftb2
 {
- public static void main(String[] args) {
+ public static void main(String[] args) throws IOException {
  
  Scanner sc = new Scanner(System.in);
- String o = sc.nextLine();
+ BufferedReader input = new BufferedReader
+   (new InputStreamReader(System.in));
+     
+ String o = input.readLine();
+ String k = "kvinna";
+ String m = "man";
+ String j = "ja";
+ String n = "nej";
  int p = sc.nextInt();
  int A1 = 0;
  int A2 = 0;
@@ -20,7 +28,7 @@ public class uppgiftb2
    
    System.out.println("Man eller kvinna?");
      
-     if (o == "man" , "Man") {
+     if (m.equalsIgnoreCase(o)) {
        A1 += 1;
          
        while(true) {
@@ -42,7 +50,7 @@ public class uppgiftb2
   }
  }
 
-     else if (o == "Kvinna" , "kvinna") {
+     else if (k.equalsIgnoreCase(o)) {
        A2 += 1;
        
        while(true) {
@@ -64,7 +72,7 @@ public class uppgiftb2
    }
   }
  }
-    catch (MismatchInputException e) {
+    catch (InputMismatchException e) {
      System.out.println("-----------------------------------------");
      System.out.println("Nu blev nagot fel, vi borjar om...");
        A1 -= A1;
@@ -75,10 +83,10 @@ public class uppgiftb2
    System.out.println("-----------------------------------------");
    System.out.println("Vill du fortsatta?");
      
-     if (o == "ja" , "Ja") {
+     if (j.equalsIgnoreCase(o)) {
        continue;
      }
-     else if (o == "Nej" , "nej") {
+     else if (n.equalsIgnoreCase(o)) {
        break;
      }
     }
@@ -92,4 +100,3 @@ public class uppgiftb2
    System.out.println("Programmet avslutas...");
  }
 }
-   
