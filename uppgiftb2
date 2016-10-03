@@ -1,102 +1,68 @@
 import java.util.*;
 import java.io.*;
 
-public class uppgiftb2
+public class test
 {
  public static void main(String[] args) throws IOException {
- 
- Scanner sc = new Scanner(System.in);
- BufferedReader input = new BufferedReader
+   /* A1 = man, A2 = kvinna, G1 = medelalderman, G2 = medelalderkvinna */
+  int A1 = 0;
+  int G1 = 0;
+  int A2 = 0;
+  int G2 = 0;
+  String m = "Man";
+  String k = "kvinna";
+   
+   System.out.println("Ar du man eller kvinna?");
+   System.out.println("------------------------");
+    
+   BufferedReader input = new BufferedReader
    (new InputStreamReader(System.in));
-     
- String o = input.readLine();
- String k = "kvinna";
- String m = "man";
- String j = "ja";
- String n = "nej";
- int p = sc.nextInt();
- int A1 = 0;
- int A2 = 0;
- int G1 = 0;
- int G2 = 0;
- int M1 = G1/A1;
- int M2 = G2/A2;
+    
+    String s = input.readLine();
+    int p = Integer.parseInt (s);
    
- while (true){
-   
-   try {
-   
-   System.out.println("Man eller kvinna?");
-     
-     if (m.equalsIgnoreCase(o)) {
-       A1 += 1;
-         
-       while(true) {
-       
-       System.out.println("-----------------------------------------");
-       System.out.println("Skriv in din alder");
-       
-        if (p <= 0) {
-         
-          System.out.println("-----------------------------------------");
-          System.out.println("Fel, forsok igen");
-          continue; 
-        }
-         
-        else {
-          G1 += p;
-            break;
+   while (s.length() < 0) {   
+    if (s.equalsIgnoreCase(m)) {
+      A1 += 1;
+      System.out.println("Du ar en man!");
+      System.out.println("------------------------");
     }
-  }
- }
-
-     else if (k.equalsIgnoreCase(o)) {
-       A2 += 1;
-       
-       while(true) {
-       
-       System.out.println("-----------------------------------------");
-       System.out.println("Skriv in din alder");
-       
-        if (p <= 0) {
-         
-          System.out.println("-----------------------------------------");
-          System.out.println("Fel, forsok igen");
-          continue; 
-        }
-         
-        else {
-          G2 += p;
-            break;
+    else if (s.equalsIgnoreCase(k)) {
+      A2 += 1;
+      System.out.println("Du ar en kvinna!");
+      System.out.println("------------------------");
+    }
+    else {
+     System.out.println("Vi borjar om...");
+     System.out.println("------------------------");
+      
+     }
+   }
+    
+   System.out.println("Hur gammal ar du?");
+   System.out.println("------------------------");
+   
+   while(s.length() > 0) {
+    if (p < 0) {
+        System.out.println("Fel, vi borjar om...");
+      }
+    
+    else if (p > 0) {
+      if (s.equalsIgnoreCase(m)) {
+        G1 += p;
+      }
+      else if (s.equalsIgnoreCase(k)) {
+        G2 += p;
+      }
+        System.out.println("Din alder lades till!");
+        System.out.println("------------------------");
+        
+     }
+    else {
+     System.out.println("Vi borjar om...");
+     System.out.println("------------------------");
+      
+     }
     }
    }
   }
- }
-    catch (InputMismatchException e) {
-     System.out.println("-----------------------------------------");
-     System.out.println("Nu blev nagot fel, vi borjar om...");
-       A1 -= A1;
-       A2 -= A2;
-       continue;
-    }
-   
-   System.out.println("-----------------------------------------");
-   System.out.println("Vill du fortsatta?");
-     
-     if (j.equalsIgnoreCase(o)) {
-       continue;
-     }
-     else if (n.equalsIgnoreCase(o)) {
-       break;
-     }
-    }
-   System.out.println("-----------------------------------------");
-   System.out.println("Medelalder man:");
-   System.out.println(M1);
-   System.out.println("-----------------------------------------");
-   System.out.println("Medelalder kvinna:");
-   System.out.println(M2);
-   System.out.println("-----------------------------------------");
-   System.out.println("Programmet avslutas...");
- }
-}
