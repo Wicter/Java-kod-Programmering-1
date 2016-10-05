@@ -1,26 +1,28 @@
 import java.util.*;
 import java.io.*;
 
+
 public class test
 {
  public static void main(String[] args) throws IOException {
    
-   /* A1 = man, A2 = kvinna, G1 = medelalderman, G2 = medelalderkvinna */
-  int A1 = 0; 
+   /* A1 = man, A2 = kvinna, G1 = alderman, G2 = alderkvinna*/
+  
+  int A1 = 0; //Antalman
   int b1 = 1; //man
-  int G1 = 0;
-  int A2 = 0;
+  int G1 = 0; //Alderman
+  int A2 = 0; //Antalkvinna
   int b2 = 1; //kvinna
-  int G2 = 0;
+  int G2 = 0; //Alderkvinna
   String m = "Man";
   String k = "kvinna";
   String j = "ja";
   String n = "nej";    
-  
+   
   while (true) {
    
-   while (true) {
-   
+   while (true) {    
+     
    System.out.println("Ar du man eller kvinna?");
    System.out.println("------------------------");
  
@@ -93,7 +95,7 @@ public class test
   System.out.println("------------------------");
      break;
    }
-   
+    
         BufferedReader input = new BufferedReader
         (new InputStreamReader(System.in));
    
