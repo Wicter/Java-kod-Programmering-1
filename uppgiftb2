@@ -14,14 +14,15 @@ public class test
   int A2 = 0; //Antalkvinna
   int b2 = 1; //kvinna
   int G2 = 0; //Alderkvinna
+  int o = A1 + A2;
   String m = "Man";
   String k = "kvinna";
   String j = "ja";
   String n = "nej";    
    
-  while (true) {
+ // while (true) {
    
-   while (true) {    
+   while (o <= 0) {    
      
    System.out.println("Ar du man eller kvinna?");
    System.out.println("------------------------");
@@ -48,7 +49,9 @@ public class test
     else {
      System.out.println("Vi borjar om...");
      System.out.println("------------------------");
-      break;
+     System.out.println("Ar du man eller kvinna?");
+     System.out.println("------------------------");
+      continue;
      }
    }
    
@@ -93,10 +96,40 @@ public class test
   System.out.println("------------------------");
   System.out.println("Vill du fortsatta?");
   System.out.println("------------------------");
-     break;
+     String u = input.readLine();
+     
+     if (u.equalsIgnoreCase(j)) {
+         continue;
+        }
+     
+     else if (u.equalsIgnoreCase(n)) {
+      
+        System.out.println(G1);
+        System.out.println(G2);
+        System.out.println(A1);
+        System.out.println(A2);
+        System.out.println("Har ar resultaten!");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+       if (A2 > 0 && G2 > 0) {
+         int h = G2 / A2;
+        System.out.println("Medelalder for kvinnor = " + h + " ar.");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+       }
+       if (A1 > 0 && G1 > 0) {
+         int l = G1 / A1;
+        System.out.println("Medelalder for man = " + l + " ar.");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+       }
+        System.out.println("Programmet avslutas!");
+        System.out.println("-----------SLUT------------");
+         break;
    }
+      else {
+        System.out.println("fel");
+        break;
+      }
     
-        BufferedReader input = new BufferedReader
+    /*    BufferedReader input = new BufferedReader
         (new InputStreamReader(System.in));
    
         String s = input.readLine();
@@ -114,7 +147,7 @@ public class test
         System.out.println("Programmet avslutas!");
         System.out.println("-----------SLUT------------");
          break;
-        }
+        } */
    }
   }
 }
